@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+  <script>
+   
+    //js41
+    function getNumberOfDango(s) {
+      let arr = s.split(" ");
+      let newarr = arr.filter(element => element < 5);
+      let number = newarr.map(Number);
+      if(number.length == 1){
+        return Number(number) + Number(5);
+      }else if(number.length == 0){
+        return Number(5 + 5);
+      }else{
+        return number.reduce((sum, element) => sum + element, 0) ;
+      }
+      
+    }
+
+    console.log(getNumberOfDango("3 50")); // 8
+    console.log(getNumberOfDango("100 500")); // 10
+    console.log(getNumberOfDango("2 4")); // 6
+
+
+    //js42
+    function isReadyForSummer(s) {
+      if((s.match(/S/g)||[]).length >= 5){
+        return "OK";
+      }else{
+        return "NG";
+      }
+    }
+
+    console.log(isReadyForSummer("W W W W W S S S S S")); // OK
+    console.log(isReadyForSummer("S S W W S W W W W W")); // NG
+    console.log(isReadyForSummer("W S S S S S S S S W")); // OK
+
+
+    //js43
+    function getNumberOfHuman(n) {
+      let arr = [];
+      for(let i = 0; i <= n; i++){
+        arr.push(i);
+      }
+      return arr.reduce((sum,element) => sum + element, 0);
+    }
+
+    console.log(getNumberOfHuman(4)); // 10
+    console.log(getNumberOfHuman(10)); // 55
+    console.log(getNumberOfHuman(50)); // 1275
+
+
+    //js44
+    function candyOrChocolate(s) {
+      if(s == "chocolate" || s == "candy"){
+        return "Thanks!";
+      }else{
+        return "No!";
+      }
+    }
+
+    console.log(candyOrChocolate("chocolate")); // Thanks!
+    console.log(candyOrChocolate("candy")); // Thanks!
+    console.log(candyOrChocolate("pannacotta")); // No!
+
+
+    //js45
+    function canParty(s) {
+      let arr = s.split("");
+      let num = Number(arr);
+      //let total = arr.reduce((sum, element) => sum + element, 0) ;
+      //return total;
+    }
+
+    console.log(canParty("11111111111")); // OK
+    console.log(canParty("1111")); // 7
+    console.log(canParty("1111111111111111")); // OK
+
+
+
+  </script>
+</body>
+</html>
+  

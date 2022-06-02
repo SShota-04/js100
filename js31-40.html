@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+  <script>
+    
+    //js31
+    function canStoreBooks(s) {
+      let arr = s.split(" ");
+      let n = arr[0];
+      let d = arr[1];
+      let e = arr[2];
+
+      if(n > d * e ){
+        return "NG";
+      }else{
+        return "OK";
+      }
+    }
+
+    console.log(canStoreBooks("400 5 85")); // OK
+    console.log(canStoreBooks("500 4 70")); // NG
+
+
+    //js32
+    function calculateNumberOfGames(n) {
+      return n * (n - 1) / 2;
+    }
+
+    console.log(calculateNumberOfGames(4)); // 6
+    console.log(calculateNumberOfGames(10)); // 45
+
+
+    //js33
+    function daysOfGoOut(s) {
+      let arr = s.split(" ");
+      let newarr = arr.filter(element => element < 30);
+      return newarr.length;
+    }
+
+    console.log(daysOfGoOut("13 0 15 30 89 100 30")); // 5
+    console.log(daysOfGoOut("0 14 18 22 0 2 4")); // 7
+    console.log(daysOfGoOut("99 99 99 99 99 99 99")); // 0
+
+
+    //js34
+    function isEquilateralTriangle(s) {
+      let arr = s.split(" ");
+      if(arr[0] == arr[1] && arr[1] == arr[2]){
+        return "yes";
+      }else{
+        return "no";
+      }
+    }
+
+    console.log(isEquilateralTriangle("10 10 10")); // yes
+    console.log(isEquilateralTriangle("3 4 5")); // No
+
+
+    //js35
+    function showWeather(n) {
+      if(n >= 0 && n <= 30){
+        return "sunny";
+      }if(n >= 31 && n <= 70){
+        return "cloudy";
+      }else{
+        return "rainy";
+      }
+    }
+
+    console.log(showWeather(31)); // cloudy
+    console.log(showWeather(2)); // sunny
+    console.log(showWeather(71)); // rainy
+
+
+    //js36
+    function greet(s1, s2) {
+      if(s2 = "M"){
+        return "Hi, Mr." + s1;
+      }else{
+        return "Hi, Ms." + s1;
+      }
+    }
+
+    console.log(greet("Stroheim", "M")); // Hi, Mr.Stroheim
+    console.log(greet("Trish", "F")); // Hi, Ms.Trish
+
+
+    //js37
+    function convertNumberToAlphabet(s) {
+      return s.replace(/5/g,'A').replace(/4/g,'B').replace(/3/g,'C').replace(/2/g,'D').replace(/1/g,'E');
+    }
+
+    console.log(convertNumberToAlphabet("53342")); // ACCBD
+    console.log(convertNumberToAlphabet("22222")); // DDDDD
+    console.log(convertNumberToAlphabet("51111")); // AEEEE
+
+
+    //js38
+    function getNumberOfSteps(s) {
+      let arr = s.split(" ");
+      return Math.max.apply(null, arr);
+    }
+
+    console.log(getNumberOfSteps("1 2 5")); // 5
+    console.log(getNumberOfSteps("2 5 5")); // 5
+    console.log(getNumberOfSteps("1 2 1")); // 2
+
+
+    //js39
+      function getInterval(s) {
+        let arr = s.split(" ");
+        let typhoon1 = arr[1] - arr[0];
+        let typhoon2 = arr[2] - arr[1];
+        let typhoon3 = arr[3] - arr[2];
+        let typhoon4 = arr[4] - arr[3];
+        return typhoon1 + " " + typhoon2 + " " + typhoon3 + " " + typhoon4;
+      }
+
+    console.log(getInterval("5 8 19 25 31")); // 3 11 6 6
+    console.log(getInterval("2 3 7 9 28")); // 1 4 2 19
+
+
+    //js40
+    function getAutumn(s) {
+      return s.replace("noaki","");
+    }
+
+    console.log(getAutumn("codenoaki")); // code
+    console.log(getAutumn("dokusyo")); // dokusyo
+    console.log(getAutumn("javascriptnoaki")); // javascript
+
+
+
+  </script>
+</body>
+</html>
+  

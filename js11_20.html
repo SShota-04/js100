@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+  <script>
+    
+    //js11
+    function countDown(n) {
+      const array = [];
+      for(let i = 1; i <= n; i++){
+        array.push((n + 1) - i);
+      }
+      return array.join("");
+      }
+      
+    console.log(countDown(3)); // 3 2 1
+    console.log(countDown(10)); // 10 9 8 7 6 5 4 3 2 1
+
+
+    //js12
+    function getOneToN(s, n) {
+      let arr = [...s];
+      let count = arr.slice( 0, n);      
+      return count.join("");
+    }
+
+    console.log(getOneToN("aabbccdd", 5)); // aabbc
+    console.log(getOneToN("gsacademyfukuoka", 9)); // gsacademy
+
+
+    //js13
+    function getMaxAndMin(s) {
+      let arr = (s).split(' ');
+      let max = Math.max.apply(null,arr);
+      let min = Math.min.apply(null,arr);
+      return max + " " + min;
+    }
+
+    console.log(getMaxAndMin("9 12 3 6 10")); // 12 3
+    console.log(getMaxAndMin("1 1 2 2 3")); // 3 1
+    console.log(getMaxAndMin("5 9 -1 10 2")); // 10 -1
+
+
+    //js14
+    function getNthChar(s, n) {
+      let arr2 = s.charAt(n - 1);
+      return arr2;
+    }
+
+    console.log(getNthChar("gsacademy", 3)); // a
+    console.log(getNthChar("abcdefg", 5)); // e
+    console.log(getNthChar("qwertyu", 1)); // q
+
+
+    //js15
+    function isEqual(s, t) {
+      if(s === t){
+        return "Yes";
+      } else{
+        return "No";
+      }
+
+    }
+
+    console.log(isEqual("gsacademy", "gsacademy")); // Yes
+    console.log(isEqual("JavaScript", "ジャバスク")); // No
+    console.log(isEqual("aaaaa", "aaaaaa")); // No
+
+
+    //js16
+    function getNumberOfA(s) {
+      let text = s
+      let count = (text.match(/A/g)||[]).length;
+      return count;
+    }
+
+    console.log(getNumberOfA("GSACADEMY")); // 2
+    console.log(getNumberOfA("aAaAaA")); // 3
+    console.log(getNumberOfA("JavaScript")); // 0
+
+
+    //js17
+    function getSurfaceArea(a) {
+      return a * a * 6;
+    }
+
+    console.log(getSurfaceArea(4)); // 96
+    console.log(getSurfaceArea(1)); // 6
+
+
+    //js18
+    function getAngle(a, b) {
+      return 180 - (a + b);
+    }
+
+    console.log(getAngle(30, 90)); // 60
+    console.log(getAngle(45, 45)); // 90
+
+
+    //js19
+    function zeroPadding3(n) {
+      if(String(n).length == 2){
+        return "0" + n;
+      }else{
+        return "00" + n;
+      }
+    }
+
+    console.log(zeroPadding3(98)); // 098
+    console.log(zeroPadding3(2)); // 002
+
+
+    //js20
+    function getPaidHolidays(s) {
+      let notholiday = s.split(" ");
+      return notholiday.filter(element => element == 'no').length;
+    }
+
+    console.log(getPaidHolidays("yes yes yes yes no no yes")); // 2
+    console.log(getPaidHolidays("yes no no no no no yes")); // 5
+
+
+
+
+  </script>
+</body>
+</html>
+  

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+  <script>
+    
+    //js21
+    function getSum(n) {
+      const array = [];
+      let sum = 0;
+      for(i = 1; i <= n; i++){
+        array.push(i);
+      }
+      let total = array.reduce((sum, element) => sum + element, 0);
+      return total;
+    }
+
+    console.log(getSum(10)); // 55
+    console.log(getSum(99)); // 4950
+
+
+    //js22
+    function getNumberOfDigits(n) {
+      return n.toString().length;
+    }
+
+    console.log(getNumberOfDigits(100)); // 3
+    console.log(getNumberOfDigits(114514)); // 6
+
+
+    //js23
+    function getBackSide(n) {
+      return 7 - n;
+    }
+
+    console.log(getBackSide(1)); // 6
+    console.log(getBackSide(3)); // 4
+
+
+    //js24
+    function convertToSeconds(n) {
+      return n * 60;
+    }
+
+    console.log(convertToSeconds(16)); // 960
+    console.log(convertToSeconds(3)); // 180
+
+
+    //js25
+    function getTimeUntilFull(n) {
+      return 100 - n;
+    }
+
+    console.log(getTimeUntilFull(70)); // 30
+    console.log(getTimeUntilFull(25)); // 75
+
+
+    //js26
+    function getInitialFromName(s) {
+      let arr = s.split(" ");
+      let first = arr[0].substring(0,1);
+      let second = arr[1].substring(0,1);
+      return first + "." + second;
+    }
+
+    console.log(getInitialFromName("Dio Brando")); // D.B
+    console.log(getInitialFromName("Pannacotta Fugo")); // P.F
+    console.log(getInitialFromName("Gyro Zeppeli")); // G.Z
+
+
+    //js27
+    function choiceOfGod(n) {
+      if(21 % n == 0){
+        return n;
+      }else{
+        return 21 % n;
+      };
+    }
+
+    console.log(choiceOfGod(4)); // 1
+    console.log(choiceOfGod(3)); // 3
+
+
+    //js28
+    function formatYMD(s) {
+      let arr = s.split(" ");
+      let year = ("0".repeat(1) + arr[0]).slice(-4);
+      let month = ("0".repeat(1) + arr[1]).slice(-2);
+      let day = ("0".repeat(1) + arr[2]).slice(-2);
+
+      return year + "/" + month + "/" + day;
+    }
+
+    console.log(formatYMD("2021 1 1")); // 2021/01/01
+    console.log(formatYMD("2020 10 10")); // 2020/10/10
+    console.log(formatYMD("794 11 29")); // 0794/11/29
+
+
+    //js29
+    function convertAtToAtMark(s) {
+      return s.replace(/at/g,'@');
+    }
+
+    console.log(convertAtToAtMark("gsatcodeatquantity")); // gs@code@quantity
+    console.log(convertAtToAtMark("atatatjojoatatat")); // @@@jojo@@@
+
+
+    //js30
+    function getNeedBox(m, n) {
+      return Math.ceil(n / m);
+    }
+
+    console.log(getNeedBox(7, 30)); // 5
+    console.log(getNeedBox(3, 100)); // 34
+    console.log(getNeedBox(7, 5)); // 1
+
+
+  </script>
+</body>
+</html>
+  
