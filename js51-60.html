@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+  <script>
+   
+    //js51
+    function getNumberOfDango(s) {
+      let arr = s.split(" ");
+      let newarr = arr.filter(element => element < 5);
+      let number = newarr.map(Number);
+      if(number.length == 1){
+        return Number(number) + Number(5);
+      }else if(number.length == 0){
+        return Number(5 + 5);
+      }else{
+        return number.reduce((sum, element) => sum + element, 0) ;
+      }
+      
+    }
+
+    console.log(getNumberOfDango("3 50")); // 8
+    console.log(getNumberOfDango("100 500")); // 10
+    console.log(getNumberOfDango("2 4")); // 6
+
+
+    
+
+
+  </script>
+</body>
+</html>
+  
